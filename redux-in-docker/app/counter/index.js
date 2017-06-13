@@ -1,2 +1,2 @@
-export { default as Counter } from './counter'
-export { default as default } from './reducers'
+export Counter from './counter'
+export default from './reducers'

@@ -2,37 +2,69 @@ import React, { PropTypes } from 'react'
 import styles from './counter.scss'
 import RaisedButton from 'material-ui/RaisedButton'
 import { connect } from 'react-redux'
-import { increment, decrement } from './actions'
+import { increment, decrement, reset } from './actions'
 import { selectors } from './reducers'
 import StepSetter from './step-setter'
 import AddCircle from 'material-ui/svg-icons/content/add-circle'
 import RemoveCircle from 'material-ui/svg-icons/content/remove-circle'
+import ResetCircle from 'material-ui/svg-icons/navigation/refresh'
 
-const Counter = ({ count, step, onIncrement, onDecrement }) => {
-  return <div>
+const CounterDescription = ({ text }) => {
+  return (
     <p>
-      A container component connected to the Redux store with synchronous dispatches.
+      { text }
     </p>
+  )
+}
+
+const CounterHeader = ({ count, step }) => {
+  return (
     <p className={ styles.counterHeading }>
       Count: <strong>{ count }</strong>
       <br />
       Step: <strong>{ step }</strong>
     </p>
+  )
+}
+
+const CounterButton = ({ onClick, icon }) => {
+  return (
     <RaisedButton
       className={ styles.counterButton }
       primary
-      onClick={ onIncrement }
-      icon={ <AddCircle /> } />
-    { ' ' }
-    <RaisedButton
-      className={ styles.counterButton }
-      primary
-      onClick={ onDecrement }
-      icon={ <RemoveCircle /> } />
-    <div className={ styles.stepInput }>
-      <StepSetter />
+      onClick={ onClick }
+      icon={ icon }
+      />
+  )
+}
+
+const Counter = ({ count, step, onIncrement, onDecrement, onReset }) => {
+  return (
+    <div>
+      <CounterDescription
+        text={ "A container component connected to the Redux store with synchronous dispatches." }
+        />
+      <CounterHeader
+        count={ count }
+        step={ step }
+        />
+      <CounterButton
+        onClick={ onDecrement }
+        icon={ <RemoveCircle /> }
+        /> { ' ' }
+      <CounterButton
+        onClick={ onIncrement }
+        icon={ <AddCircle /> }
+        /> { ' ' }
+      <CounterButton
+        onClick={ onReset }
+        icon={ <ResetCircle /> }
+        />
+      <div className={ styles.stepInput }>
+        <StepSetter />
+      </div>
     </div>
-  </div>
+  )
 }
 
 Counter.propTypes = {
@@ -40,6 +72,7 @@ Counter.propTypes = {
   step: PropTypes.number.isRequired,
   onIncrement: PropTypes.func.isRequired,
   onDecrement: PropTypes.func.isRequired,
+  onReset: PropTypes.func.isRequired,
 }
 
 export default connect(
@@ -53,4 +86,5 @@ export default connect(
   ...ownProps,
   onIncrement: () => dispatch(increment(stateProps.step)),
   onDecrement: () => dispatch(decrement(stateProps.step)),
+  onReset: () => dispatch(reset()),
 }))(Counter)

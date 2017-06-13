@@ -26,11 +26,11 @@ export default class StepSetter extends Component {
   changeStep = event => {
     const step = toNumber(event.target.value)
     let errorText
-    if (inRange(step, STEP_MIN, STEP_MAX)) {
+    if (inRange(step, STEP_MIN, STEP_MAX + STEP_MIN)) {
       this.props.changeStep(step)
       errorText = null
     } else {
-      errorText = 'Type a number between 1 and 10'
+      errorText = `Type a number between ${STEP_MIN} and ${STEP_MAX}`
     }
     this.setState({ errorText })
   }

@@ -1,10 +1,11 @@
-import { increment, decrement, changeStep } from './actions'
+import { increment, decrement, reset, changeStep } from './actions'
 import { makeActionReducers } from 'redux-standard-actions'
 import { combineReducers } from 'redux'
 
 const count = makeActionReducers({
   [increment]: (state, { payload }) => state + payload,
   [decrement]: (state, { payload }) => state - payload,
+  [reset]: () => 0,
 }, 0)
 
 const step = makeActionReducers({

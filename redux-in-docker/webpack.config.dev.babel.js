@@ -60,6 +60,7 @@ export default {
     contentBase: './assets',
     host: '0.0.0.0',
     port: '8000',
+    disableHostCheck: true,
     watchOptions: process.env.DOCKER_MAC_BETA
       ? {}
       : { aggregateTimeout: 300, poll: 1000 },

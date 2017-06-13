@@ -13,10 +13,10 @@ export default function Home() {
         <li><BlankTargetLink to='https://github.com/acdlite/redux-actions'>Redux Actions</BlankTargetLink></li>
         <li><BlankTargetLink to='https://github.com/reactjs/reselect'>reselect</BlankTargetLink></li>
         <li><BlankTargetLink to='http://www.material-ui.com/'>Material UI</BlankTargetLink></li>
+        <li><BlankTargetLink to='http://lodash.com/'>lodash</BlankTargetLink></li>
       </ul>
       <p>Other libraries included but not used:</p>
       <ul>
-        <li><BlankTargetLink to='http://lodash.com/'>lodash</BlankTargetLink></li>
         <li><BlankTargetLink to='https://github.com/paularmstrong/normalizr'>normalizr</BlankTargetLink></li>
         <li><BlankTargetLink to='https://github.com/matthew-andrews/isomorphic-fetch'>fetch</BlankTargetLink></li>
       </ul>

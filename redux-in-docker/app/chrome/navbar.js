@@ -16,8 +16,7 @@ export default function Navbar() {
               to='/'
               onlyActiveOnIndex>
               <ActionHome
-                className={ styles.homeIcon }
-                color='#455A64' />
+                className={ styles.homeIcon } />
             </NavLink>
           </li>
           <li><NavLink to='/counter'>Counter</NavLink></li>
