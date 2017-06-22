@@ -4,8 +4,6 @@ set -x
 
 export NODE_ENV="${NODE_ENV:-development}"
 
-echo $NODE_ENV
-
 if [ $NODE_ENV != "production" ]; then
   npm run dev
 else

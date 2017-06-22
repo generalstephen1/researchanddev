@@ -11,25 +11,10 @@ export default function Navbar() {
     <div className={ styles.navbar }>
       <div className={ styles.navlinks }>
         <ul>
-          <li>
-            <NavLink
-              to='/'
-              onlyActiveOnIndex>
-              <ActionHome
-                className={ styles.homeIcon }
-                color='#455A64' />
-            </NavLink>
-          </li>
-          <li><NavLink to='/counter'>Counter</NavLink></li>
+          <li><NavLink to='/cv'>CV</NavLink></li>
+          <li><NavLink to='/github'>Github</NavLink></li>
+          <li><NavLink to='/mailTo'>Email</NavLink></li>
         </ul>
-      </div>
-      <div className={ styles.navmenu }>
-        <span>Hi!</span>
-        <IconMenu
-          iconButtonElement={ <IconButton><Avatar src='' className={ styles.navmenuAvatar } /></IconButton> }
-          targetOrigin={ { horizontal: 'right', vertical: 'bottom' } }
-          anchorOrigin={ { horizontal: 'right', vertical: 'top' } }>
-        </IconMenu>
       </div>
     </div>
   )
