@@ -4,12 +4,9 @@
   "devDependencies": {
     "micro": "6.0.2"
   },
-  "files": [
-    "index.js"
-  ],
+  "files": ["index.js"],
   "scripts": {
-    "start": "micro -p 5000 .",
-    "bash": "/bin/bash"
+    "start": "micro -p 3000 ."
   },
   "main": "index.js"
 }
